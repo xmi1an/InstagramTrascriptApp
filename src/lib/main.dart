@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -109,7 +108,7 @@ class _TranscriptHomePageState extends State<TranscriptHomePage> {
       final String? url = InstagramUrlParser.firstInstagramUrl(sharedText);
       if (url != null && mounted) {
         _urlController.text = url;
-        unawaited(_generateTranscript(autoStarted: true));
+        _generateTranscript(autoStarted: true);
       }
     } on PlatformException {
       // Sharing is best-effort and currently implemented for Android.
