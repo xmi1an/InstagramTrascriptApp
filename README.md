@@ -2,6 +2,26 @@
 
 A clean Flutter app that turns Instagram Reel links into transcripts.
 
+## Architecture
+
+```text
+src/lib/
+  app/                         App shell and theme
+  features/transcript/
+    data/                      Backend API client
+    domain/                    Transcript models/errors
+    platform/                  Share intent bridge
+    presentation/              Screen and UI widgets
+    utils/                     Instagram URL parsing
+
+backend/
+  app/
+    main.py                    FastAPI routes
+    config.py                  Environment settings
+    models.py                  Request/response schemas
+    services/                  yt-dlp + Whisper orchestration
+```
+
 ## Build plan
 
 1. **Flutter mobile UI**
@@ -41,7 +61,7 @@ cd backend
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 
 Health check:
