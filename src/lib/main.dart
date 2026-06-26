@@ -60,8 +60,8 @@ class AppTheme {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          primary: brand,
-          onPrimary: Colors.white,
+          backgroundColor: brand,
+          foregroundColor: Colors.white,
           elevation: 0,
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
@@ -417,7 +417,7 @@ class _Card extends StatelessWidget {
 }
 
 class InstagramUrlParser {
-  static final RegExp _urlPattern = RegExp(r'https?:\/\/(?:www\.)?instagram\.com\/[^\s]+', caseSensitive: false);
+  static final RegExp _urlPattern = RegExp(r'https?://(?:www\.)?instagram\.com/[^\s]+', caseSensitive: false);
 
   static String? firstInstagramUrl(String? text) {
     if (text == null) return null;
