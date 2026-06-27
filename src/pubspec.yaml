@@ -1,23 +1,23 @@
-name: new_app
-description: A new app.
+name: insta_transcript_app
+description: A clean Flutter app for generating transcripts from Instagram Reel links.
 
 publish_to: 'none'
 
 version: 0.1.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.17.0 <4.0.0"
 
 dependencies:
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
+  http: ^1.2.2
 
 dev_dependencies:
-  flutter_lints: ^1.0.3
+  flutter_lints: ^2.0.3
   flutter_test:
     sdk: flutter
 
 flutter:
   uses-material-design: true
-  

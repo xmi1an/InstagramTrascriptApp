@@ -1,16 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:new_app/main.dart';
+import 'package:insta_transcript_app/app/app.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // arrange
-    const app = App();
+  testWidgets('renders transcript home screen', (WidgetTester tester) async {
+    await tester.pumpWidget(const InstaTranscriptApp());
 
-    // act
-    await tester.pumpWidget(app);
-
-    // assert
-    expect(find.text('new app'), findsOneWidget);
+    expect(find.text('Instagram Transcript'), findsOneWidget);
+    expect(find.text('Generate'), findsOneWidget);
+    expect(find.text('Paste'), findsOneWidget);
   });
 }
